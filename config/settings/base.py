@@ -82,7 +82,8 @@ THIRD_PARTY_APPS = [
 LOCAL_APPS = [
     "surfdjango.users",
     # Your stuff: custom apps go here
-    "corporations",
+    # "corporations",
+    "surfdjango.corporations.apps.CorporationsConfig",
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
