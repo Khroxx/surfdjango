@@ -20,7 +20,10 @@ urlpatterns = [
     path("users/", include("surfdjango.users.urls", namespace="users")),
     path("accounts/", include("allauth.urls")),
     # Your stuff: custom urls includes go here
-    # ...
+    path(
+        "corporation/",
+        include("surfdjango.corporations.urls", namespace="corporations"),
+    ),
     # Media files
     *static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT),
 ]
