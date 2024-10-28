@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block title %}
+  Edit Corporation
+{% endblock title %}
+{% block content %}
+  <h1>Edit Corporation</h1>
+  <form method="post" action="{% url 'corporations:update-corp' corporation.id %}">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <div class="control-group">
+      <div class="controls">
+        <button type="submit" class="btn btn-primary">Update</button>
+        <a href="{% url 'corporations:delete-corp' corporation.id %}" class="btn btn-danger">Delete</a>
+      </div>
+    </div>
+  </form>
+  {% if messages %}
+    <ul class="messages">
+      {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endblock content %}  
