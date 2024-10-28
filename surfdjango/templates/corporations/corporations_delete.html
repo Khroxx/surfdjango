@@ -1,11 +1,13 @@
 {% extends "base.html" %}
+
 {% block title %}
   Delete Corporation
 {% endblock title %}
 {% block content %}
   <h1>Delete Corporation</h1>
   <p>Are you sure you want to delete "{{ corporation.name }}"?</p>
-  <form method="post" action="{% url 'corporations:delete-corp' corporation.id %}">
+  <form method="post"
+        action="{% url 'corporations:delete-corp' corporation.id %}">
     {% csrf_token %}
     <button type="submit" class="btn btn-danger">Delete</button>
     <a href="{% url 'corporations:list-corp' %}" class="btn btn-secondary">Cancel</a>
@@ -13,7 +15,7 @@
   {% if messages %}
     <ul class="messages">
       {% for message in messages %}
-        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        <li {% if message.tags %}class="{{ message.tags }}"{% endif %}>{{ message }}</li>
       {% endfor %}
     </ul>
   {% endif %}

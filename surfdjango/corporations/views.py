@@ -47,9 +47,11 @@ class CorporationDeleteView(SuccessMessageMixin, DeleteView):
 
 delete_corp_view = CorporationDeleteView.as_view()
 
+
 class CorporationListView(ListView):
     model = Corporation
     template_name = "corporations/corporations_list.html"
     context_object_name = "corporations"
-    
+
+
 list_corp_view = CorporationListView.as_view()
