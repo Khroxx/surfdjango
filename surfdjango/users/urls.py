@@ -4,9 +4,14 @@ from .views import user_detail_view
 from .views import user_redirect_view
 from .views import user_update_view
 
+from .views import UserListCreateAPIView
+from .views import UserRetrieveUpdateDestroyAPIView
+
 app_name = "users"
 urlpatterns = [
-    path("~redirect/", view=user_redirect_view, name="redirect"),
+    path("~redirect/", view=user_redirect_view, name="redirect"),   
     path("~update/", view=user_update_view, name="update"),
-    path("<str:username>/", view=user_detail_view, name="detail"),
+    # path("<str:username>/", view=user_detail_view, name="detail"), # commmented out because it redirects
+    path('users-get/', UserListCreateAPIView.as_view(), name='user-list-create'),
+    path('users/<int:pk>/', UserRetrieveUpdateDestroyAPIView.as_view(), name='user-detail'),
 ]

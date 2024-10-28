@@ -77,14 +77,22 @@ THIRD_PARTY_APPS = [
     "allauth.account",
     "allauth.mfa",
     "allauth.socialaccount",
+    "corsheaders",
 ]
 
 LOCAL_APPS = [
     "surfdjango.users",
     # Your stuff: custom apps go here
     # "corporations",
+    "rest_framework",
+    
     "surfdjango.corporations.apps.CorporationsConfig",
 ]
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:8080", 
+]
+
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
@@ -140,6 +148,7 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "allauth.account.middleware.AccountMiddleware",
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 # STATIC

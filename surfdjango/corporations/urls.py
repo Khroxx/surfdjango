@@ -1,14 +1,9 @@
 from django.urls import path
-
-from .views import create_corp_view
-from .views import delete_corp_view
-from .views import list_corp_view
-from .views import update_corp_view
+from .views import CorporationListCreateAPIView
+from .views import CorporationUpdateDeleteAPIView
 
 app_name = "corporations"
 urlpatterns = [
-    path("create/", create_corp_view, name="create-corp"),
-    path("<int:pk>/update/", update_corp_view, name="update-corp"),
-    path("<int:pk>/delete/", delete_corp_view, name="delete-corp"),
-    path("corporations-list/", list_corp_view, name="list-corp"),
+    path("corporations/", CorporationListCreateAPIView.as_view(), name="corporation-create-read"),
+    path("corporations/<int:pk>", CorporationUpdateDeleteAPIView.as_view(), name="corporation-update-delete"),
 ]
