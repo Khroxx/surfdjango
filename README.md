@@ -7,11 +7,39 @@ case study job challenge
 
 License: MIT
 
-## Settings
+## Local Installation
 
-Moved to [settings](https://cookiecutter-django.readthedocs.io/en/latest/1-getting-started/settings.html).
+1. Clone repository
+```bash
+git clone https://github.com/Khroxx/surfdjango.git
+```
+2. Install environment
+```bash
+python3 -m venv env
+``` 
+3. Enter environment
+- **Unix-like (Linux/macOS)**: source env/bin/activate 
+- **Windows**: .\env\Scripts\activate
+4. Install requirements
+```bash
+pip install -r requirements/base.txt
+```
+```bash
+pip install -r requirements/local.txt
+```
+5. Create Postgres Database:
+```bash
+ createdb --username=postgres surfdjango
+```
+- with username debug and password debug
+6. create .env  with:
+- DATABASE_URL=postgres://debug:debug@localhost:5432/surfdjango
+- USE_DOCKER=yes
+7. Start local server
+```bash
+python3 manage.py runserver
+```
 
-## Basic Commands
 
 ### Setting Up Your Users
 
@@ -40,15 +68,3 @@ To run the tests, check your test coverage, and generate an HTML coverage report
 #### Running tests with pytest
 
     $ pytest
-
-### Live reloading and Sass CSS compilation
-
-Moved to [Live reloading and SASS compilation](https://cookiecutter-django.readthedocs.io/en/latest/2-local-development/developing-locally.html#using-webpack-or-gulp).
-
-## Deployment
-
-The following details how to deploy this application.
-
-### Docker
-
-See detailed [cookiecutter-django Docker documentation](https://cookiecutter-django.readthedocs.io/en/latest/3-deployment/deployment-with-docker.html).

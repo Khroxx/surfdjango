@@ -3,6 +3,7 @@
 Werkzeug[watchdog]==3.0.5 # https://github.com/pallets/werkzeug
 ipdb==0.13.13  # https://github.com/gotcha/ipdb
 psycopg[c]==3.2.3  # https://github.com/psycopg/psycopg
+psycopg2-binary==2.9.10
 
 # Testing
 # ------------------------------------------------------------------------------
