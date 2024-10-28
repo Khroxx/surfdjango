@@ -67,6 +67,9 @@
                 <li class="nav-item">
                   <a class="nav-link" href="{% url 'corporations:create-corp' %}">Create Corporation</a>
                 </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'corporations:list-corp' %}">All Corporations</a>
+                </li>
                 {% if request.user.is_authenticated %}
                   <li class="nav-item">
                     <a class="nav-link"

@@ -8,7 +8,7 @@
   <form method="post" action="{% url 'corporations:delete-corp' corporation.id %}">
     {% csrf_token %}
     <button type="submit" class="btn btn-danger">Delete</button>
-    <a href="{% url 'corporations:list' %}" class="btn btn-secondary">Cancel</a>
+    <a href="{% url 'corporations:list-corp' %}" class="btn btn-secondary">Cancel</a>
   </form>
   {% if messages %}
     <ul class="messages">

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}
+  Corporation List
+{% endblock title %}
+{% block content %}
+  <h1>Corporation List</h1>
+  <ul>
+    {% for corporation in corporations %}
+      <li> 
+        <a href="{% url 'corporations:update-corp' corporation.id %}">{{ corporation.name }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock content %}
