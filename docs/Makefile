@@ -7,7 +7,7 @@ SPHINXOPTS    ?=
 SPHINXBUILD   ?= sphinx-build
 SOURCEDIR     = .
 BUILDDIR      = ./_build
-APP = /app
+APP = ../surfdjango
 
 .PHONY: html livehtml apidocs Makefile
 

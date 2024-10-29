@@ -16,9 +16,9 @@ git clone https://github.com/Khroxx/surfdjango.git
 2. Install environment
 ```bash
 python3 -m venv env
-``` 
+```
 3. Enter environment
-- **Unix-like (Linux/macOS)**: source env/bin/activate 
+- **Unix-like (Linux/macOS)**: source env/bin/activate
 - **Windows**: .\env\Scripts\activate
 4. Install requirements
 ```bash

@@ -6,6 +6,11 @@ from surfdjango.users.models import User
 
 
 class Corporation(models.Model):
+    """
+    Default Corporation Model.
+    Add fields if necessary.
+    """
+
     name = models.CharField(max_length=255, blank=False, null=False)
     address = models.TextField(max_length=255, blank=False, null=False)
     url = models.URLField(default=None, blank=True)
