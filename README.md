@@ -31,9 +31,14 @@ pip install -r requirements/local.txt
 ```bash
  createdb --username=postgres surfdjango
 ```
-- with username debug and password debug
+- create or use your postgres user/password
+```bash
+sudo su postgres psql
+CREATE USER username WITH PASSWORD 'password';
+GRANT ALL PRIVILEGES ON DATABASE surfdjango TO username;
+```
 6. create .env  with:
-- DATABASE_URL=postgres://debug:debug@localhost:5432/surfdjango
+- DATABASE_URL=postgres://postgresusername:postgrespassword@localhost:5432/surfdjango
 - USE_DOCKER=yes
 7. Start local server
 ```bash
