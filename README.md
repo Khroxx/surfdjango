@@ -13,7 +13,7 @@ License: MIT
 ```bash
 git clone https://github.com/Khroxx/surfdjango.git
 ```
-2. Install environment
+2. cd surfdjango/ and install environment
 ```bash
 python3 -m venv env
 ```
