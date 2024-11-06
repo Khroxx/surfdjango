@@ -12,6 +12,7 @@ Welcome to surfgreendjango's documentation!
 
    howto
    users
+   corporations
 
 
 

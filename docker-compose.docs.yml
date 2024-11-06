@@ -9,8 +9,9 @@ services:
       - ./.envs/.local/.django
     volumes:
       - ./docs:/docs:z
-      - ./config:/app/config:z
-      - ./surfdjango:/app/surfdjango:z
+      - ./config:/docs/config:z
+      - ./surfdjango:/docs/surfdjango:z
+    working_dir: /docs
     ports:
       - '9000:9000'
     command: /start-docs

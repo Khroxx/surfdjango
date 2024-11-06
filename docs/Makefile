@@ -7,7 +7,7 @@ SPHINXOPTS    ?=
 SPHINXBUILD   ?= sphinx-build
 SOURCEDIR     = .
 BUILDDIR      = ./_build
-APP = ../surfdjango
+APP = surfdjango
 
 .PHONY: html livehtml apidocs Makefile
 
@@ -21,7 +21,7 @@ livehtml:
 
 # Outputs rst files from django application code
 apidocs:
-	sphinx-apidoc -o $(SOURCEDIR)/api $(APP)
+	sphinx-apidoc -o $(SOURCEDIR)/api $(APP) $(APP)/corporations
 
 # Catch-all target: route all unknown targets to Sphinx using the new
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).

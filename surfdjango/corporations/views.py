@@ -1,3 +1,4 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
@@ -48,7 +49,7 @@ class CorporationDeleteView(SuccessMessageMixin, DeleteView):
 delete_corp_view = CorporationDeleteView.as_view()
 
 
-class CorporationListView(ListView):
+class CorporationListView(LoginRequiredMixin, ListView):
     model = Corporation
     template_name = "corporations/corporations_list.html"
     context_object_name = "corporations"
