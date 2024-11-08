@@ -12,13 +12,7 @@ License: MIT
 # What you need:
 - Docker
 - Docker Compose
-- PostgreSQL (+ a user)
-    - How to create a User in Postgres:
-    ```bash
-    sudo -u postgres psql
-    CREATE USER username WITH PASSWORD 'password';
-    GRANT ALL PRIVILEGES ON DATABASE surfdjango TO username;
-    ```
+
 1. Clone repository
 ```bash
 git clone https://github.com/Khroxx/surfdjango.git
@@ -26,23 +20,14 @@ git clone https://github.com/Khroxx/surfdjango.git
 
 2. cd surfdjango/ and install environment
 ```bash
-python3 -m venv env
+python3 -m venv venv
 ```
 
 3. Enter environment
-- **Unix-like (Linux/macOS)**: source env/bin/activate
-- **Windows**: .\env\Scripts\activate
+- **Unix-like (Linux/macOS)**: source venv/bin/activate
+- **Windows**: .\venv\Scripts\activate
 
-4. Create Postgres Database:
-```bash
- createdb --username=postgres surfdjango
-```
-
-5. create .env  with:
-- DATABASE_URL=postgres://postgresusername:postgrespassword@localhost:5432/surfdjango
-- USE_DOCKER=yes
-
-6. Run locally using Docker:
+4. Run locally using Docker:
 ```bash
 docker compose -f docker-compose.local.yml run --build
 ```
